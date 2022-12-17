@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'connect.php';
 
 $full_name = $_POST['full_name'];
@@ -10,5 +11,7 @@ $password_confirm= $_POST['password_confirm'];
 if($password===$password_confirm){
 
 }
-else{die('Пароли не совпадают');}
+else{
+    $_SESSION['message'] = 'Пароли не совпадают';
+    header('Location: ./registr.html');}
 ?>

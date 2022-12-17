@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +12,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    reqire('connect.php');
-    if(isset($_POST['username'])&& isset($_POST['password'])){
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password=$_POST['password'];
-        $query = "INSERT INTO Users(username, email, password) VALUES ('$username','$email','$password')";
-        $result = mysqli_query($connection, $query);
-        if($result){
-            $smsq = "регистрация прошла успешно!";
-        }
-        else{$fsmsq = "ошибка регистрации!"; }
-    }
-    ?>
+    
     <div class="container">
         <form class="form-signin" action="/vendor/signup.php" method="post" enctype="multipart/form-data">
         <h2>Регистрация</h2>
@@ -35,7 +25,7 @@
         <input type="password_confirm" name="password" class="form-control" placeholder="Подтвердите пароль" required>
         <button class="btn btn-outline-warning" type="submit">Регистрация</button>
         <p>Вы уже авторизованы? - <a href="/index.html">Вход на сайт</a>!</p>
-        <p class="msg"></p>
+        <p class="msg"><?= $_SESSION['message'] ?></p>
     </form>
     </div>
 </body>

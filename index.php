@@ -9,20 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-    reqire('connect.php');
-    if(isset($_POST['username'])&& isset($_POST['password'])){
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password=$_POST['password'];
-        $query = "INSERT INTO Users(username, email, password) VALUES ('$username','$email','$password')";
-        $result = mysqli_query($connection, $query);
-        if($result){
-            $smsq = "регистрация прошла успешно!";
-        }
-        else{$fsmsq = "ошибка регистрации!"; }
-    }
-    ?>
+    
     <div class="container">
         <form class="form-signin" action="" method="POST"></form>
         <h2>Авторизация</h2>
