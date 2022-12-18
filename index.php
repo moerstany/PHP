@@ -17,7 +17,7 @@
         <input type="text" name="username" class="form-control" placeholder="Введите логин" required>
         <input type="password" name="password" class="form-control" placeholder="Введите пароль" required>
         <button class="btn btn-outline-warning" type="submit">Вход на сайт</button>
-        <p>У вас нет аккаунта? - <a href="/registr.html">Зарегистрируйтесь</a>!</p>
+        <p>У вас нет аккаунта? - <a href="/registr.php">Зарегистрируйтесь</a>!</p>
 
     </div>
 </body>

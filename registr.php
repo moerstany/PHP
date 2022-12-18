@@ -24,8 +24,15 @@ session_start();
         <input type="password" name="password" class="form-control" placeholder="Введите пароль" required>
         <input type="password_confirm" name="password" class="form-control" placeholder="Подтвердите пароль" required>
         <button class="btn btn-outline-warning" type="submit">Регистрация</button>
-        <p>Вы уже авторизованы? - <a href="/index.html">Вход на сайт</a>!</p>
-        <p class="msg"><?= $_SESSION['message'] ?></p>
+        <p>Вы уже авторизованы? - <a href="/index.php">Вход на сайт</a>!</p>
+        
+            <?php
+            if( $_SESSION['message']){
+                echo ' <p class="msg"> ' . $_SESSION['message'] . '</p>';
+            }
+             unset ($_SESSION['message']); 
+             ?>
+        
     </form>
     </div>
 </body>
