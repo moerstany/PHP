@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +15,20 @@
 <body>
     
     <div class="container">
-        <form class="form-signin" action="" method="POST"></form>
+        <form class="form-signin" action="vendor/signin.php" method="post">
         <h2>Авторизация</h2>
         
-        <input type="text" name="username" class="form-control" placeholder="Введите логин" required>
+        <input type="text" name="login" class="form-control" placeholder="Введите логин" required>
         <input type="password" name="password" class="form-control" placeholder="Введите пароль" required>
         <button class="btn btn-outline-warning" type="submit">Вход на сайт</button>
         <p>У вас нет аккаунта? - <a href="/registr.php">Зарегистрируйтесь</a>!</p>
-
+        <?php
+            if( $_SESSION['message']){
+                echo ' <p class="msg"> ' . $_SESSION['message'] . '</p>';
+            }
+             unset ($_SESSION['message']); 
+        ?>
+        </form>
     </div>
 </body>
 </html>
